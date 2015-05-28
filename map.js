@@ -9,8 +9,8 @@
 			app.controller('GeoJSONController', [ '$scope', '$http', 'olData', function($scope, $http, olData) {
             angular.extend($scope, {
                 defaultCenter: {
-                    lat: 39.749089,  
-                    lon: -104.996966,  
+                    lat: 39.756797,  
+                    lon: -105.222344,  
                     zoom: 11
                 },
                 defaults: {
