@@ -56,14 +56,29 @@
 		          ] 
             });
             
+            var highlightStyle = new ol.style.Style({
+				  stroke: new ol.style.Stroke({
+				    color: 'yellow',
+				    width: 3
+				  })
+				});
+				
+				var defaultStyle = new ol.style.Style({
+				  stroke: new ol.style.Stroke({
+				    color: 'green',
+				    width: 3
+				  })
+				});
+            
             ////
             // Bind the mouse move event to the layer
             ////
             $scope.$on('openlayers.layers.routes.mousemove', function(event, feature) {
                  $scope.$apply(function(scope) {      					
 		                if(feature && $scope.routes[feature.getProperties().OBJECTID]) {
+		                	//feature.setStyle(highlightStyle);
 		                  $scope.mouseMoveRoute = feature?$scope.routes[feature.getProperties().OBJECTID].properties.NAME:'';
-		                }
+		                }           
 		            });
          	});
          	

@@ -5,10 +5,10 @@
     <mapcanvas>
         <units>meters</units>
         <extent>
-            <xmin>-11714094.80490380711853504</xmin>
-            <ymin>4831911.28538001794368029</ymin>
-            <xmax>-11706981.42962545715272427</xmax>
-            <ymax>4836421.04109711851924658</ymax>
+            <xmin>-11737697.42758036032319069</xmin>
+            <ymin>4819564.50281931273639202</ymin>
+            <xmax>-11680790.17912570014595985</xmax>
+            <ymax>4855642.70466027967631817</ymax>
         </extent>
         <projections>1</projections>
         <destinationsrs>
@@ -41,9 +41,9 @@
         </legendlayer>
     </legend>
     <projectlayers layercount="2">
-        <maplayer minimumScale="0" maximumScale="1e+08" simplifyDrawingHints="1" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" geometry="Line" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
+        <maplayer minimumScale="-4.65661e-10" maximumScale="1e+08" simplifyDrawingHints="1" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" geometry="Line" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
             <id>BICYCLE_FACILITY_INVENTORY_432620150527155850697</id>
-            <datasource>/home/jlewis/Documents/data/BICYCLE_FACILITY_INVENTORY_4326.shp|layerid=0|subset="TYPE_FX" = 'Unpaved Trail - Waterway, RR, Utility' OR "TYPE_FX" = 'Unpaved Trail Next to Road' OR "TYPE_FX" = 'Other/Unknown'</datasource>
+            <datasource>/home/jlewis/Documents/data/BICYCLE_FACILITY_INVENTORY_4326.shp|layerid=0|subset="NOTES" = 'Mountain Bike' OR "NOTES" = 'Mountain Bike - No connection' OR "NOTES" = 'Mountain Bike - No connections' OR "NOTES" = 'Mountain Bike trail - No connections' OR "NOTES" = 'Mountain Bike trail if anything' OR "NOTES" = 'Mountain Bike, No connections' OR "NOTES" = 'Mountain Bike/No connections' OR "NOTES" = 'Mountain bike' OR "NOTES" = 'Mountain bike on small dirt road' OR "NOTES" = 'Mountain biking' OR "NOTES" = 'Mountian bike/ski area' OR "TYPE_FX" = 'Unpaved Trail - Waterway, RR, Utility' OR "TYPE_FX" = 'Unpaved Trail Next to Road'</datasource>
             <title></title>
             <abstract></abstract>
             <keywordList>
@@ -79,7 +79,7 @@
                             <prop k="offset_unit" v="MM"/>
                             <prop k="penstyle" v="solid"/>
                             <prop k="use_custom_dash" v="0"/>
-                            <prop k="width" v="2"/>
+                            <prop k="width" v="1"/>
                             <prop k="width_unit" v="MM"/>
                         </layer>
                     </symbol>
@@ -253,10 +253,10 @@
                 <edittype labelontop="0" editable="1" type="0" name="UPDATED"/>
                 <edittype labelontop="0" editable="1" type="0" name="WIDTH_FAIL"/>
             </edittypes>
-            <editform></editform>
+            <editform>.</editform>
             <editforminit></editforminit>
             <featformsuppress>0</featformsuppress>
-            <annotationform></annotationform>
+            <annotationform>.</annotationform>
             <editorlayout>generatedlayout</editorlayout>
             <excludeAttributesWMS/>
             <excludeAttributesWFS/>
@@ -264,7 +264,7 @@
         </maplayer>
         <maplayer minimumScale="0" maximumScale="1e+08" ol_layer_type="4" type="plugin" hasScaleBasedVisibilityFlag="0" name="openlayers">
             <id>OpenLayers_plugin_layer20150527160052662</id>
-            <datasource></datasource>
+            <datasource>.</datasource>
             <title></title>
             <abstract></abstract>
             <keywordList>
