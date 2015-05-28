@@ -17,7 +17,7 @@ html, body {
 
 #fixed-hover-window {
 	bottom: 5px;
-/*	min-width: 150px;*/
+	min-width: 150px;
 	background-color: rgba(255, 255, 255, .75);
 	position: absolute;
 }

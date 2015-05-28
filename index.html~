@@ -3,7 +3,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <link rel="stylesheet" href="http://openlayers.org/en/v3.1.1/css/ol.css" type="text/css">
-    <link rel="stylesheet" href="../js/angular-openlayers-directive-master/dist/angular-openlayers-directive.css" type="text/css"/>
+    <link rel="stylesheet" href="js/angular-openlayers-directive-master/dist/angular-openlayers-directive.css" type="text/css"/>
 	 <link rel="stylesheet" href="all.css" type="text/css">
 	 
 <!--	 <link rel="shortcut icon" type="image/png" href="jasmine/lib/jasmine-2.0.0/jasmine_favicon.png">
@@ -22,12 +22,14 @@
 
     <title>404s Ride Map</title>
   </head>
-  <body ng-controller="404MapController">
+  <body ng-controller="GeoJSONController">
   
-  		<openlayers ol-center="defaultCenter" ol-defaults="defaults" ol-controls="controls" height="100%" width="100%">
-  			<ol-layer ol-layer-properties="layer" ng-repeat="layer in geojson"></ol-layer>
+  		<openlayers ol-center="defaultCenter" ol-defaults="defaults" custom-layers="true" ol-controls="controls" height="100%" width="100%">
+  			<ol-layer ol-layer-properties="layer" ng-repeat="layer in layers|filter:{active:true}"></ol-layer>
   		</openlayers>
-  		<pre ng-bind="layers | json"></pre>
+  		<div id="fixed-hover-window">
+  			<p id="fixed-hover-window-text">Mouse over this route: {{ mouseMoveRoute }}</p>
+  		</div>
   
 <!--    <div id="map" class="map"></div>-->
 <!--    <div id="layer-switcher-container">

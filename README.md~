@@ -1,3 +1,3 @@
-Just a simple OpenLayer 3 map built as an exercise to get to know the new OpenLayers. 
+Just a simple OpenLayer 3 map built for showing / planning bike routes for the 404s
 
 
