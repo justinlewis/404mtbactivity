@@ -26,24 +26,11 @@
   
   		<openlayers ol-center="defaultCenter" ol-defaults="defaults" custom-layers="true" ol-controls="controls" height="100%" width="100%">
   			<ol-layer ol-layer-properties="layer" ng-repeat="layer in layers|filter:{active:true}"></ol-layer>
+  			<ol-marker ol-marker-properties="golden" ></ol-marker>
   		</openlayers>
   		<div id="fixed-hover-window">
-  			<p id="fixed-hover-window-text">Mouse over this route: {{ mouseMoveRoute }}</p>
+  			<p id="fixed-hover-window-text">Route Name: {{ mouseMoveRoute }}</p>
   		</div>
-  
-<!--    <div id="map" class="map"></div>-->
-<!--    <div id="layer-switcher-container">
-    	<h4 style="margin-top:10px; margin-bottom:5px;">Base Maps</h4>
-    	<input type="radio" name="baseLayers" value="osm" checked>OSM <br>
-    	
-    	<h4 style="margin-top:15px; margin-bottom:5px;">Overlay Layers</h4>
-    	<input type="checkbox" name="overlayLayers" value="1">WMS - US States  <br>
-    	<input type="checkbox" name="overlayLayers" value="2">TopoJSON - Countries  <br>
-    	<input type="checkbox" name="overlayLayers" value="3">TopoJson - Bike Routes  <br>
-    	<input type="checkbox" name="overlayLayers" value="4">TopoJson - Crash Location  <br>
-    	<input type="checkbox" name="overlayLayers" value="5">Vector Tile - Roads OSM  <br>
-    	<input type="checkbox" name="overlayLayers" value="6">ESRI WMS - Norfolk Virginia  <br>
-    </div>-->
 
   </body>
 </html>

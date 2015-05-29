@@ -9,12 +9,31 @@
 			app.controller('GeoJSONController', [ '$scope', '$http', 'olData', function($scope, $http, olData) {
             angular.extend($scope, {
                 defaultCenter: {
-                    lat: 39.749089,  
-                    lon: -104.996966,  
+                    lat: 39.756797,  
+                    lon: -105.222344,  
                     zoom: 11
                 },
+                nTableMtn: {
+                    lat: 39.772997, 
+                    lon: -105.196747,
+                    label: {
+                        message: 'Meeting Spot',
+                        show: true,
+                        showOnMouseOver: true
+                    }
+                },
+                apex: {
+                    lat: 39.715101, 
+                    lon: -105.211198,
+                    label: {
+                        message: 'Meeting Spot',
+                        show: false,
+                        showOnMouseOver: true
+                    }
+                },              
                 defaults: {
-                    events: {                    
+                    events: {    
+                    		map: ['pointermove'],                
                         layers: [ 'mousemove' ]
                     },
                     interactions: {
@@ -69,6 +88,65 @@
 				    width: 3
 				  })
 				});
+				
+				
+				
+				
+	/*			var highlightStyleCache = {};
+
+				var featureOverlay = new ol.FeatureOverlay({
+					//
+					// MAPOBJ IS NEVER SET. FIGURE OUT HOW ANGULAR IS HANDLING IT
+					//
+				  map: mapObj,
+				  style: function(feature, resolution) {
+				    var text = resolution < 5000 ? feature.get('name') : '';
+				    if (!highlightStyleCache[text]) {
+				      highlightStyleCache[text] = [new ol.style.Style({
+				        stroke: new ol.style.Stroke({
+				          color: '#f00',
+				          width: 1
+				        }),
+				        fill: new ol.style.Fill({
+				          color: 'rgba(255,0,0,0.1)'
+				        }),
+				        text: new ol.style.Text({
+				          font: '12px Calibri,sans-serif',
+				          text: text,
+				          fill: new ol.style.Fill({
+				            color: '#000'
+				          }),
+				          stroke: new ol.style.Stroke({
+				            color: '#f00',
+				            width: 3
+				          })
+				        })
+				      })];
+				    }
+				    return highlightStyleCache[text];
+				  }
+				});
+
+
+				var highlight;
+				var displayFeatureInfo = function(pixel) {	
+					//
+					// MAPOBJ IS NEVER SET. FIGURE OUT HOW ANGULAR IS HANDLING IT
+					//			
+				  var feature = mapObj.forEachFeatureAtPixel(pixel, function(feature, layer) {
+				    return feature;
+				  });
+				
+				  if (feature !== highlight) {
+				    if (highlight) {
+				      featureOverlay.removeFeature(highlight);
+				    }
+				    if (feature) {
+				      featureOverlay.addFeature(feature);
+				    }
+				    highlight = feature;
+				  }			
+				};*/
             
             ////
             // Bind the mouse move event to the layer
@@ -76,13 +154,26 @@
             $scope.$on('openlayers.layers.routes.mousemove', function(event, feature) {
                  $scope.$apply(function(scope) {      					
 		                if(feature && $scope.routes[feature.getProperties().OBJECTID]) {
-		                	feature.setStyle(highlightStyle);
+		                	//feature.setStyle(highlightStyle);
 		                  $scope.mouseMoveRoute = feature?$scope.routes[feature.getProperties().OBJECTID].properties.NAME:'';
-		                }
-		                
-		                	feature.setStyle(defaultStyle);
-		                
+		                }           
 		            });
+         	});
+         	
+         	////
+            // Bind the pointer move event to the map
+            ////
+            $scope.$on('openlayers.map.pointermove', function(event) {
+                 $scope.$apply(function(scope) {      					
+       					if (event.dragging) {
+							    return;
+							}
+							//
+							// MAPOBJ IS NEVER SET. FIGURE OUT HOW ANGULAR IS HANDLING IT
+							//
+							/*var pixel = mapObj.getEventPixel(event.originalEvent);
+							displayFeatureInfo(pixel);*/
+						});
          	});
          	
            // Get the routes data and append it to the $scope variable

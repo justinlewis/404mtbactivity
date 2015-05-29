@@ -5,10 +5,10 @@
     <mapcanvas>
         <units>meters</units>
         <extent>
-            <xmin>-11742402.01364989206194878</xmin>
-            <ymin>4818590.78288563154637814</ymin>
-            <xmax>-11685495.01142309606075287</xmax>
-            <ymax>4854668.82862243242561817</ymax>
+            <xmin>-11718034.3360509667545557</xmin>
+            <ymin>4829366.3666574889793992</ymin>
+            <xmax>-11703807.68398541398346424</xmax>
+            <ymax>4838385.81565002258867025</ymax>
         </extent>
         <projections>1</projections>
         <destinationsrs>
@@ -51,13 +51,18 @@
                 <legendlayerfile isInOverview="0" layerid="BICYCLE_FACILITY_INVENTORY_4326_copy20150528105820427" visible="0"/>
             </filegroup>
         </legendlayer>
+        <legendlayer drawingOrder="-1" open="true" checked="Qt::Unchecked" name="OpenStreetMap" showFeatureCount="0">
+            <filegroup open="true" hidden="false">
+                <legendlayerfile isInOverview="0" layerid="OpenLayers_plugin_layer20150529101731687" visible="0"/>
+            </filegroup>
+        </legendlayer>
         <legendlayer drawingOrder="-1" open="true" checked="Qt::Unchecked" name="Bing Road" showFeatureCount="0">
             <filegroup open="true" hidden="false">
                 <legendlayerfile isInOverview="0" layerid="OpenLayers_plugin_layer20150528112354593" visible="0"/>
             </filegroup>
         </legendlayer>
     </legend>
-    <projectlayers layercount="4">
+    <projectlayers layercount="5">
         <maplayer minimumScale="0" maximumScale="1e+08" simplifyDrawingHints="1" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" geometry="Line" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
             <id>BICYCLE_FACILITY_INVENTORY_432620150527155850697</id>
             <datasource>/home/jlewis/Documents/data/BICYCLE_FACILITY_INVENTORY_4326.shp|layerid=0|subset="NOTES" = 'Mountain Bike' OR "NOTES" = 'Mountain Bike - No connection' OR "NOTES" = 'Mountain Bike - No connections' OR "NOTES" = 'Mountain Bike trail - No connections' OR "NOTES" = 'Mountain Bike trail if anything' OR "NOTES" = 'Mountain Bike, No connections' OR "NOTES" = 'Mountain Bike/No connections' OR "NOTES" = 'Mountain bike' OR "NOTES" = 'Mountain bike on small dirt road' OR "NOTES" = 'Mountain biking' OR "NOTES" = 'Mountian bike/ski area' OR "TYPE_FX" = 'Unpaved Trail - Waterway, RR, Utility' OR "TYPE_FX" = 'Unpaved Trail Next to Road' OR "OBJECTID" = 17325 OR "NAME" = 'Waterton Canyon Trail'</datasource>
@@ -281,7 +286,7 @@
         </maplayer>
         <maplayer minimumScale="0" maximumScale="1e+08" simplifyDrawingHints="1" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" geometry="Line" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
             <id>BICYCLE_FACILITY_INVENTORY_4326_copy20150528105820427</id>
-            <datasource>/home/jlewis/Documents/data/BICYCLE_FACILITY_INVENTORY_4326.shp|layerid=0</datasource>
+            <datasource>/home/jlewis/Documents/data/BICYCLE_FACILITY_INVENTORY_4326.shp</datasource>
             <title></title>
             <abstract></abstract>
             <keywordList>
@@ -502,13 +507,36 @@
         </maplayer>
         <maplayer minimumScale="0" maximumScale="1e+08" ol_layer_type="11" type="plugin" hasScaleBasedVisibilityFlag="0" name="openlayers">
             <id>OpenLayers_plugin_layer20150528112354593</id>
-            <datasource></datasource>
+            <datasource>.</datasource>
             <title></title>
             <abstract></abstract>
             <keywordList>
                 <value></value>
             </keywordList>
             <layername>Bing Road</layername>
+            <srs>
+                <spatialrefsys>
+                    <proj4>+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0 +k=1.0 +units=m +nadgrids=@null +wktext  +no_defs</proj4>
+                    <srsid>3857</srsid>
+                    <srid>3857</srid>
+                    <authid>EPSG:3857</authid>
+                    <description>WGS 84 / Pseudo Mercator</description>
+                    <projectionacronym>merc</projectionacronym>
+                    <ellipsoidacronym>WGS84</ellipsoidacronym>
+                    <geographicflag>false</geographicflag>
+                </spatialrefsys>
+            </srs>
+            <customproperties/>
+        </maplayer>
+        <maplayer minimumScale="0" maximumScale="1e+08" ol_layer_type="4" type="plugin" hasScaleBasedVisibilityFlag="0" name="openlayers">
+            <id>OpenLayers_plugin_layer20150529101731687</id>
+            <datasource></datasource>
+            <title></title>
+            <abstract></abstract>
+            <keywordList>
+                <value></value>
+            </keywordList>
+            <layername>OpenStreetMap</layername>
             <srs>
                 <spatialrefsys>
                     <proj4>+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0 +k=1.0 +units=m +nadgrids=@null +wktext  +no_defs</proj4>
@@ -735,10 +763,10 @@
                 <edittype labelontop="0" editable="1" type="0" name="UPDATED"/>
                 <edittype labelontop="0" editable="1" type="0" name="WIDTH_FAIL"/>
             </edittypes>
-            <editform></editform>
+            <editform>.</editform>
             <editforminit></editforminit>
             <featformsuppress>0</featformsuppress>
-            <annotationform></annotationform>
+            <annotationform>.</annotationform>
             <editorlayout>tablayout</editorlayout>
             <excludeAttributesWMS/>
             <excludeAttributesWFS/>
@@ -764,6 +792,35 @@
             <SelectionColorGreenPart type="int">255</SelectionColorGreenPart>
             <CanvasColorBluePart type="int">255</CanvasColorBluePart>
         </Gui>
+        <Digitizing>
+            <LayerSnappingList type="QStringList">
+                <value>BICYCLE_FACILITY_INVENTORY_432620150527155850697</value>
+                <value>BICYCLE_FACILITY_INVENTORY_4326_copy20150528105820427</value>
+                <value>routes20150528114310816</value>
+            </LayerSnappingList>
+            <LayerSnappingEnabledList type="QStringList">
+                <value>enabled</value>
+                <value>enabled</value>
+                <value>enabled</value>
+            </LayerSnappingEnabledList>
+            <AvoidIntersectionsList type="QStringList"/>
+            <IntersectionSnapping type="bool">true</IntersectionSnapping>
+            <LayerSnappingToleranceUnitList type="QStringList">
+                <value>0</value>
+                <value>0</value>
+                <value>0</value>
+            </LayerSnappingToleranceUnitList>
+            <LayerSnapToList type="QStringList">
+                <value>to_vertex</value>
+                <value>to_vertex</value>
+                <value>to_vertex</value>
+            </LayerSnapToList>
+            <LayerSnappingToleranceList type="QStringList">
+                <value>0.000000</value>
+                <value>0.000000</value>
+                <value>0.000000</value>
+            </LayerSnappingToleranceList>
+        </Digitizing>
         <PositionPrecision>
             <DecimalPlaces type="int">2</DecimalPlaces>
             <Automatic type="bool">true</Automatic>
