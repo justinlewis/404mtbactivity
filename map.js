@@ -55,7 +55,8 @@
 		                    }
 		                },
 		            	 {
-		                	name: 'routes',
+		                	name: 'Routes ',
+		                	label: 'MTB Routes - DRCOG',
 		                	active: true,
 		                	source: {
 		                    type: 'GeoJSON',
@@ -66,13 +67,43 @@
 		                        color: 'rgba(255, 0, 255, 0.6)'
 		                    },
 		                    stroke: {
+		                        color: 'red',
+		                        width: 3
+		                    }
+		                	}
+		            	},
+		            	{
+		                	name: 'routes-osm',
+		                	label: 'MTB Routes - OSM',
+		                	active: true,
+		                	source: {
+		                    type: 'GeoJSON',
+		                    url: 'data/routes-osm.geojson'
+		                	},
+		                	style: {
+		                    fill: {
+		                        color: 'rgba(255, 0, 255, 0.6)'
+		                    },
+		                    stroke: {
 		                        color: 'green',
 		                        width: 3
 		                    }
 		                	}
-		            	}
-		            
-		          ] 
+		            	}		           	
+		          ],
+                changeLayer: function(layer) {
+	              		if(layer.source.type === "OSM" || layer.source.type === "GeoJSON"){
+	              			if(layer.active){
+	              				layer.active = false;
+	              			}
+	              			else{
+	              				layer.active = true;
+	              			}
+	              		}
+	              		else{
+	                  	layer.active = (l === layer);
+	                  }
+                }
             });
             
             var highlightStyle = new ol.style.Style({
@@ -156,7 +187,7 @@
 		                if(feature && $scope.routes[feature.getProperties().OBJECTID]) {
 		                	//feature.setStyle(highlightStyle);
 		                  $scope.mouseMoveRoute = feature?$scope.routes[feature.getProperties().OBJECTID].properties.NAME:'';
-		                }           
+		                }          
 		            });
          	});
          	
