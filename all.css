@@ -17,6 +17,7 @@ html, body {
 
 #fixed-hover-window {
 	bottom: 5px;
+	left: 5px;
 /*	min-width: 150px;*/
 	background-color: rgba(255, 255, 255, .75);
 	position: absolute;
@@ -59,15 +60,11 @@ ul{
 }
 .legend-icon p{
 	font-size: 14px;
-  	width: 208px;
+  	width: 80px;
   	margin: 0;
   	margin-left: 25px;
 }
 
-#osm{
+#routes-icon{
   background: green;
-}
-
-#drcog{
-  background: red;
 }

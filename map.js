@@ -55,30 +55,12 @@
 		                    }
 		                },
 		            	 {
-		                	name: 'Routes ',
-		                	label: 'MTB Routes - DRCOG',
+		                	name: 'routes',
+		                	label: 'MTB Routes',
 		                	active: true,
 		                	source: {
 		                    type: 'GeoJSON',
-		                    url: 'data/routes.geojson'
-		                	},
-		                	style: {
-		                    fill: {
-		                        color: 'rgba(255, 0, 255, 0.6)'
-		                    },
-		                    stroke: {
-		                        color: 'red',
-		                        width: 3
-		                    }
-		                	}
-		            	},
-		            	{
-		                	name: 'routes-osm',
-		                	label: 'MTB Routes - OSM',
-		                	active: true,
-		                	source: {
-		                    type: 'GeoJSON',
-		                    url: 'data/routes-osm.geojson'
+		                    url: 'data/routes-merge.geojson'
 		                	},
 		                	style: {
 		                    fill: {
@@ -89,7 +71,7 @@
 		                        width: 3
 		                    }
 		                	}
-		            	}		           	
+		            	}	           	
 		          ],
                 changeLayer: function(layer) {
 	              		if(layer.source.type === "OSM" || layer.source.type === "GeoJSON"){
@@ -184,9 +166,15 @@
             ////
             $scope.$on('openlayers.layers.routes.mousemove', function(event, feature) {
                  $scope.$apply(function(scope) {      					
-		                if(feature && $scope.routes[feature.getProperties().OBJECTID]) {
+		                if(feature && $scope.routes[feature.getProperties().id]) {
 		                	//feature.setStyle(highlightStyle);
-		                  $scope.mouseMoveRoute = feature?$scope.routes[feature.getProperties().OBJECTID].properties.NAME:'';
+		                	
+		                	$("#fixed-hover-window").show();
+		                	
+		                  $scope.mouseMoveRoute = feature?$scope.routes[feature.getProperties().id].properties.name:'';
+		                  if(!$scope.mouseMoveRoute){
+		                  	$scope.mouseMoveRoute = 'n/a';
+		                  }
 		                }          
 		            });
          	});
@@ -199,6 +187,8 @@
        					if (event.dragging) {
 							    return;
 							}
+							$scope.mouseMoveRoute = '';
+							$("#fixed-hover-window").hide();
 							//
 							// MAPOBJ IS NEVER SET. FIGURE OUT HOW ANGULAR IS HANDLING IT
 							//
@@ -208,12 +198,12 @@
          	});
          	
            // Get the routes data and append it to the $scope variable
-	        $http.get("data/routes.geojson").success(function(data, status) {
+	        $http.get("data/routes-merge.geojson").success(function(data, status) {
 	            // Put the countries on an associative array
 	            $scope.routes = {};
 	            for (var i=0; i< data.features.length; i++) {
 	                var route = data.features[i];
-	                $scope.routes[data.features[i].properties.OBJECTID] = route;
+	                $scope.routes[data.features[i].properties.id] = route;
 	            }
 	        });
          	

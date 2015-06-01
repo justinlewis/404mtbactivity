@@ -32,11 +32,7 @@
   			<ol-marker ol-marker-properties="nTableMtn" ></ol-marker>
   			<ol-marker ol-marker-properties="apex" ></ol-marker>
   		</openlayers>
-<!--  		<div id="layer-switcher-container">
-  			<h4 style="margin-top:15px; margin-bottom:5px;">Overlay Layers</h4>
-    		<input type="checkbox" name="overlayLayers" value="1" checked>MTB Routes - DRCOG <br>
-    		<input ng-click="changeLayer(layer)" ng-bind="layer.name" type="checkbox" name="overlayLayers" value="2" checked>MTB Routes - OSM  <br>
-    	</div>-->
+
   		<div id="fixed-hover-window">
   			<p id="fixed-hover-window-text">Route Name: {{ mouseMoveRoute }}</p>
   		</div>
@@ -47,8 +43,7 @@
 	            </li>
 	        </ul>
 	        <ul>
-					<li id="drcog" class="legend-icon"><p>MTB Routes - DRCOG</p></li>
-					<li id="osm" class="legend-icon"><p>MTB Routes - OSM</p></li>	        
+					<li id="routes-icon" class="legend-icon"><p>MTB Routes</p></li>      
 	        </ul>
        </div>
   </body>
