@@ -30,7 +30,16 @@
                         show: false,
                         showOnMouseOver: true
                     }
-                },              
+                }, 
+                mtFalcon: {
+                    lat: 39.646849, 
+                    lon: -105.196365,
+                    label: {
+                        message: 'Meeting Spot',
+                        show: false,
+                        showOnMouseOver: true
+                    }
+                },           
                 defaults: {
                     events: {    
                     		map: ['pointermove'],                
@@ -68,7 +77,7 @@
 		                    },
 		                    stroke: {
 		                        color: 'green',
-		                        width: 5
+		                        width: 3
 		                    }
 		                	}
 		            	}	           	

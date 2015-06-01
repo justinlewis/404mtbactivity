@@ -17,7 +17,7 @@
                     lat: 39.772997, 
                     lon: -105.196747,
                     label: {
-                        message: 'Meeting Spot',
+                        message: 'North Table Mountain Meeting Spot',
                         show: false,
                         showOnMouseOver: true
                     }
@@ -26,11 +26,20 @@
                     lat: 39.715101, 
                     lon: -105.211198,
                     label: {
-                        message: 'Meeting Spot',
+                        message: 'Apex Meeting Spot',
                         show: false,
                         showOnMouseOver: true
                     }
-                },              
+                }, 
+                mtFalcon: {
+                    lat: 39.646849, 
+                    lon: -105.196365,
+                    label: {
+                        message: 'Mt. Falcon Meeting Spot',
+                        show: false,
+                        showOnMouseOver: true
+                    }
+                },           
                 defaults: {
                     events: {    
                     		map: ['pointermove'],                
