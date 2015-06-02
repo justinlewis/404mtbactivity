@@ -31,6 +31,8 @@
   			<ol-layer ol-layer-properties="layer" ng-repeat="layer in layers|filter:{active:true}"></ol-layer>
   			<ol-marker ol-marker-properties="nTableMtn" ></ol-marker>
   			<ol-marker ol-marker-properties="apex" ></ol-marker>
+  			<ol-marker ol-marker-properties="mtFalcon" ></ol-marker>
+<!--  			<ol-marker ol-marker-properties="greenMt" ></ol-marker>-->
   		</openlayers>
 
   		<div id="fixed-hover-window">

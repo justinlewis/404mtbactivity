@@ -39,7 +39,16 @@
                         show: false,
                         showOnMouseOver: true
                     }
-                },           
+                },  
+                greenMt: {
+                    lat: 39.696784, 
+                    lon: -105.192362,
+                    label: {
+                        message: 'Green Mountain Meeting Spot',
+                        show: false,
+                        showOnMouseOver: true
+                    }
+                },         
                 defaults: {
                     events: {    
                     		map: ['pointermove'],                
