@@ -16,6 +16,9 @@
                 nTableMtn: {
                     lat: 39.772997, 
                     lon: -105.196747,
+                    onClick: function (event, properties) {
+    							OpenInNewTab("https://goo.gl/maps/vhnZs");
+  						  },                    
                     label: {
                         message: 'North Table Mountain Meeting Spot',
                         show: false,
@@ -23,8 +26,11 @@
                     }
                 },
                 apex: {
-                    lat: 39.715101, 
-                    lon: -105.211198,
+                    lat: 39.716166,  
+                    lon: -105.209572,
+                    onClick: function (event, properties) {
+    							OpenInNewTab("https://goo.gl/maps/1xV48");
+  						  },
                     label: {
                         message: 'Apex Meeting Spot',
                         show: false,
@@ -33,7 +39,10 @@
                 }, 
                 mtFalcon: {
                     lat: 39.646849, 
-                    lon: -105.196365,
+                    lon: -105.196365,                   
+                    onClick: function (event, properties) {
+    							OpenInNewTab("https://goo.gl/maps/vm3QQ");
+  						  },
                     label: {
                         message: 'Mt. Falcon Meeting Spot',
                         show: false,
@@ -43,10 +52,14 @@
                 greenMt: {
                     lat: 39.696784, 
                     lon: -105.192362,
+                    onClick: function (event, properties) {
+    							OpenInNewTab("https://goo.gl/maps/SklG3");
+  						  },
                     label: {
                         message: 'Green Mountain Meeting Spot',
                         show: false,
                         showOnMouseOver: true
+                        //showOnMouseClick: true
                     }
                 },         
                 defaults: {
@@ -120,7 +133,10 @@
 				  })
 				});
 				
-				
+				function OpenInNewTab(url) {
+  					var win = window.open(url, '_blank');
+  					win.focus();
+				}
 				
 				
 	/*			var highlightStyleCache = {};
