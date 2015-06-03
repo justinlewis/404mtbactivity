@@ -32,7 +32,7 @@
   			<ol-marker ol-marker-properties="nTableMtn" ></ol-marker>
   			<ol-marker ol-marker-properties="apex" ></ol-marker>
   			<ol-marker ol-marker-properties="mtFalcon" ></ol-marker>
-  			<ol-marker ol-marker-properties="greenMt" ></ol-marker>
+  			<ol-marker ol-marker-properties="greenMtWest" ></ol-marker>
   		</openlayers>
 
   		<div id="fixed-hover-window">
@@ -40,12 +40,15 @@
   		</div>
 		<div id="layer-switcher-container">
 	        <ul>
-	            <li style="display: inline" ng-repeat="layer in layers|filter:{name:'routes'}">
+	            <li style="display: inline" ng-repeat="layer in layers|filter:{name:'!osm'}">
 	                <button ng-click="changeLayer(layer)" class="btn btn-default" ng-bind="layer.label"></button>
 	            </li>
 	        </ul>
-	        <ul>
-					<li id="routes-icon" class="legend-icon"><p>MTB Routes</p></li>      
+	        <ul>				
+					<li id="group-rides-icon-easy" class="legend-icon"><p>Easy</p></li>   
+					<li id="group-rides-icon-moderate" class="legend-icon"><p>Moderate</p></li>
+					<li id="group-rides-icon-hard" class="legend-icon"><p>Hard</p></li>   
+					<li id="routes-icon" class="legend-icon"><p>MTB Routes</p></li> 
 	        </ul>
        </div>
   </body>

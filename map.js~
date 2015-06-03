@@ -41,7 +41,7 @@
                     lat: 39.646849, 
                     lon: -105.196365,                   
                     onClick: function (event, properties) {
-    							OpenInNewTab("https://goo.gl/maps/liqEm");
+    							OpenInNewTab("https://goo.gl/maps/vm3QQ");
   						  },
                     label: {
                         message: 'Mt. Falcon Meeting Spot',
@@ -49,14 +49,14 @@
                         showOnMouseOver: true
                     }
                 },  
-                greenMt: {
+                greenMtWest: {
                     lat: 39.696784, 
                     lon: -105.192362,
                     onClick: function (event, properties) {
     							OpenInNewTab("https://goo.gl/maps/SklG3");
   						  },
                     label: {
-                        message: 'Green Mountain Meeting Spot',
+                        message: 'Green Mountain Meeting Spot (west)',
                         show: false,
                         showOnMouseOver: true
                         //showOnMouseClick: true
@@ -98,11 +98,29 @@
 		                        color: 'rgba(255, 0, 255, 0.6)'
 		                    },
 		                    stroke: {
-		                        color: 'green',
-		                        width: 3
+		                        color: '#663300',
+		                        width: 2
 		                    }
 		                	}
-		            	}	           	
+		            	},
+		            	{
+		                	name: '404-rides',
+		                	label: '404 Group Rides',
+		                	active: true,
+		                	source: {
+		                    type: 'GeoJSON',
+		                    url: 'data/group-rides.geojson'
+		                	},
+		                	style: {
+		                    fill: {
+		                        color: 'rgba(255, 0, 255, 0.6)'
+		                    },
+		                    stroke: {
+		                        color: '#22A122',
+		                        width: 5
+		                    }
+		                	}
+		            	}		                       	
 		          ],
                 changeLayer: function(layer) {
 	              		if(layer.source.type === "OSM" || layer.source.type === "GeoJSON"){
@@ -213,6 +231,21 @@
 		            });
          	});
          	
+         	$scope.$on('openlayers.layers.404-rides.mousemove', function(event, feature) {
+                 $scope.$apply(function(scope) {      					
+		                if(feature && $scope.rides[feature.getProperties().id]) {
+		                	//feature.setStyle(highlightStyle);
+		                	
+		                	$("#fixed-hover-window").show();
+		                	
+		                  $scope.mouseMoveRoute = feature?$scope.rides[feature.getProperties().id].properties.name:'';
+		                  if(!$scope.mouseMoveRoute){
+		                  	$scope.mouseMoveRoute = 'n/a';
+		                  }
+		                }          
+		            });
+         	});
+         	
          	////
             // Bind the pointer move event to the map
             ////
@@ -238,6 +271,15 @@
 	            for (var i=0; i< data.features.length; i++) {
 	                var route = data.features[i];
 	                $scope.routes[data.features[i].properties.id] = route;
+	            }
+	        });
+	        
+	        $http.get("data/group-rides.geojson").success(function(data, status) {
+	            // Put the countries on an associative array
+	            $scope.rides = {};
+	            for (var i=0; i< data.features.length; i++) {
+	                var route = data.features[i];
+	                $scope.rides[data.features[i].properties.id] = route;
 	            }
 	        });
          	

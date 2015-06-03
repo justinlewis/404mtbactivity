@@ -60,11 +60,27 @@ ul{
 }
 .legend-icon p{
 	font-size: 14px;
-  	width: 80px;
+  	width: 200px;
   	margin: 0;
   	margin-left: 25px;
 }
 
 #routes-icon{
+  background: #663300;
+}
+
+#group-rides-icon{
   background: green;
+}
+
+#group-rides-icon-easy{
+  background: #22A122;
+}
+
+#group-rides-icon-moderate{
+  background: #2168C8;
+}
+
+#group-rides-icon-hard{
+  background: black;
 }
